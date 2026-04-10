@@ -1,0 +1,9 @@
+#!/bin/bash
+# Git post-checkout hook — delegates to the shared worktree-setup script.
+# Symlinks .claude/ and auto-memory in worktrees back to the main checkout.
+#
+# Install: copy to .git/hooks/post-checkout in any repo, or use init.templateDir
+# for automatic installation in all new clones.
+
+SETUP="$HOME/.claude/hooks/worktree-setup.sh"
+[ -x "$SETUP" ] && exec "$SETUP" "$@"
