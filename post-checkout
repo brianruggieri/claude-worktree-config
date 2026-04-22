@@ -7,3 +7,4 @@
 
 SETUP="$HOME/.claude/hooks/worktree-setup.sh"
 [ -x "$SETUP" ] && exec "$SETUP" "$@"
+exit 0  # never fail clones if SETUP is missing/unexecutable
